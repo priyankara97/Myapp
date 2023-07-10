@@ -5,7 +5,7 @@ import { Button } from 'react-native-paper';
 export default function Home() {
   return (
     <View>
-<Button icon="help" mode="contained" onPress={() => console.log('Pressed')}>
+<Button icon="home" mode="contained" onPress={() => console.log('Pressed')}>
     Press me
   </Button>
   <Image

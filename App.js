@@ -12,11 +12,22 @@ import Home from './Components/Home';
 const App = () => {
   return (
     <SafeAreaProvider>
-     <TopBar/>
-     <BottomBar />
-     <BottomBar />
-     <BottomBar />
-    <Home/>
+<View style={styles.container}>
+<View style={{flex:2,backgroundColor:'blue'}}>
+
+  
+</View>
+<View style={{flex:5,backgroundColor:'red'}}>
+
+  
+</View>
+
+<View style={{flex:8,backgroundColor:'green'}}>
+
+  
+</View>
+
+</View>
     </SafeAreaProvider>
   );
 };
@@ -24,5 +35,12 @@ const App = () => {
 
 
 export default App;
+
+
+const styles =StyleSheet.create({
+  container:{
+    flex:1
+  }
+})
 
 //  start from 1.39 minutes 
