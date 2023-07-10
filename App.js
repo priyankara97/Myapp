@@ -6,13 +6,17 @@ import AboutUs from './Screens/AboutUs';
 import MenuItems from './Components/MenuItems';
 import TopBar from './Components/TopBar';
 import BottomBar from './Components/BottomBar';
+import Home from './Components/Home';
 
 
 const App = () => {
   return (
     <SafeAreaProvider>
      <TopBar/>
-     <BottomBar/>
+     <BottomBar />
+     <BottomBar />
+     <BottomBar />
+    <Home/>
     </SafeAreaProvider>
   );
 };
@@ -21,4 +25,4 @@ const App = () => {
 
 export default App;
 
-
+//  start from 1.39 minutes 
