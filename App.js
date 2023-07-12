@@ -11,11 +11,11 @@ import { white } from 'react-native-paper/lib/typescript/src/styles/themes/v2/co
 
 import FlexDemo from './Components/FlexDemo';
 
+
 const App = () => {
   return (
     <SafeAreaProvider>
 <LoginPage/>
-
 
     </SafeAreaProvider>
   );
