@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import LoginPage from './Screens/LoginPage';
 import AboutUs from './Screens/AboutUs';
@@ -7,27 +7,16 @@ import MenuItems from './Components/MenuItems';
 import TopBar from './Components/TopBar';
 import BottomBar from './Components/BottomBar';
 import Home from './Components/Home';
+import { white } from 'react-native-paper/lib/typescript/src/styles/themes/v2/colors';
 
+import FlexDemo from './Components/FlexDemo';
 
 const App = () => {
   return (
     <SafeAreaProvider>
-<View style={styles.container}>
-<View style={{flex:2,backgroundColor:'blue'}}>
+<LoginPage/>
 
-  
-</View>
-<View style={{flex:5,backgroundColor:'red'}}>
 
-  
-</View>
-
-<View style={{flex:8,backgroundColor:'green'}}>
-
-  
-</View>
-
-</View>
     </SafeAreaProvider>
   );
 };
@@ -37,10 +26,5 @@ const App = () => {
 export default App;
 
 
-const styles =StyleSheet.create({
-  container:{
-    flex:1
-  }
-})
 
 //  start from 1.39 minutes 
