@@ -10,12 +10,13 @@ import Home from './Components/Home';
 import { white } from 'react-native-paper/lib/typescript/src/styles/themes/v2/colors';
 
 import FlexDemo from './Components/FlexDemo';
+import LoadData from './Components/LoadData';
 
 
 const App = () => {
   return (
     <SafeAreaProvider>
-<LoginPage/>
+<LoadData/>
 
     </SafeAreaProvider>
   );
