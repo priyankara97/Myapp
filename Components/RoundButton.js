@@ -1,10 +1,15 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-export default function RoundButton() {
+export default function RoundButton(props) {
   return (
-    <View>
-      <Text >RoundButton</Text>
+    <View >
+
+
+      <TouchableOpacity style={props.style}>
+      <Text >{props.name}</Text>
+      </TouchableOpacity>
+     
     </View>
   )
 }
