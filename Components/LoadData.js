@@ -1,50 +1,53 @@
 import React, { useEffect, useState } from 'react'
 import { FlatList, Text, View } from 'react-native'
 import { Button, TextInput } from 'react-native-paper'
+import {
+  BallIndicator,
+
+} from 'react-native-indicators';
 
 const LoadData = () => {
 
 
-  const [data,setData]=useState([]);
-  const [name,setName]=useState('');
+  const [data, setData] = useState([]);
+  const [name, setName] = useState('');
+  const[isLoaded,setIsLoaded]=useState(false);
 
-useEffect (()=>{
-  // AllData();
-   console.log("hello")
-},[])
+  useEffect(() => {
+     //AllData();
+    //console.log("hello")
+  }, [])
 
-const AllData =() =>{
-  
-  fetch('https://imdb-top-100-movies.p.rapidapi.com',{
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': 'fbde58c11emsh0d4113cae575a79p1d39d1jsn698c0f813aec',
-      'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
-    }
-  })
+  const AllData = () => {
 
-  .then((response) => response.json())
-  .then((json) => setData(json));
-}
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    
+      .then((response) => response.json())
+      .then((json) => setData(json));
+      setIsLoaded(true);
+  }
 
 
 
   return (
-  <View>
-<Text>Data</Text>
+    <View>
+      {isLoaded ? <View>
 
-<Button mode='contained' onPress={AllData} >Dataload</Button>
-<TextInput mode='outlined' placeholder='enter your email' onChangeText={(t)=>{setName(t)}}></TextInput>
-<FlatList
-        data={data}
-        renderItem={({item}) => {return(
-          <View>
-            <Text>{item.title}</Text>
-            <Text>{item.rating}</Text>
-          </View>
-        )}}
-        keyExtractor={item => item.id}
-      />
+        <Button mode='contained' onPress={AllData} >Dataload</Button>
+        <TextInput mode='outlined' placeholder='enter your email' onChangeText={(t) => { setName(t) }}></TextInput>
+        <FlatList
+          data={data}
+          renderItem={({ item }) => {
+            return (
+              <View>
+                <Text>{item.title}</Text>
+                <Text>{item.version}</Text>
+              </View>
+            )
+          }}
+          keyExtractor={item => item.id}
+        />
+      </View>: < BallIndicator color='red'/>}
   </View>
   )
 }
