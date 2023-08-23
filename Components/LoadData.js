@@ -10,13 +10,19 @@ const LoadData = () => {
 
 useEffect (()=>{
   // AllData();
-  console.log("hello")
+   console.log("hello")
 },[])
 
 const AllData =() =>{
-
   
-  fetch('https://jsonplaceholder.typicode.com/posts')
+  fetch('https://imdb-top-100-movies.p.rapidapi.com',{
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'fbde58c11emsh0d4113cae575a79p1d39d1jsn698c0f813aec',
+      'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
+    }
+  })
+
   .then((response) => response.json())
   .then((json) => setData(json));
 }
@@ -34,6 +40,7 @@ const AllData =() =>{
         renderItem={({item}) => {return(
           <View>
             <Text>{item.title}</Text>
+            <Text>{item.rating}</Text>
           </View>
         )}}
         keyExtractor={item => item.id}
