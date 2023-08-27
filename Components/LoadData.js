@@ -14,7 +14,7 @@ const LoadData = () => {
   const[isLoaded,setIsLoaded]=useState(false);
 
   useEffect(() => {
-     //AllData();
+     AllData();
     //console.log("hello")
   }, [])
 
